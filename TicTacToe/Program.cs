@@ -276,5 +276,6 @@ class TicTacToe
             Console.WriteLine("Ничья");
         }
         Console.ForegroundColor = ConsoleColor.White;
+        Console.ReadLine();
     }
 }
