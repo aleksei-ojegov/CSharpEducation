@@ -203,7 +203,7 @@ class TicTacToe
                 if(get_winner_combination(select_player_1))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Победитель за крестиками !");
+                    Console.WriteLine("Победитель играл крестами !");
                     winner = true;
                     break;
                 }
@@ -214,7 +214,7 @@ class TicTacToe
                 if (get_winner_combination(select_player_2))
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Победитель за нуликами !");
+                    Console.WriteLine("Победитель играл нулями !");
                     winner = true;
                     break;
                 }
