@@ -4,7 +4,7 @@ using System.Drawing;
 class TicTacToe
 {
     static int[,] get_box_index(int number)
-    {//определяет положение на поле исходя из кода
+    {
         int [,] indexs = new int[1,2];
         switch(number)
         {
@@ -49,7 +49,7 @@ class TicTacToe
     }
 
     static bool get_winner_combination(int [] number)
-    {//определяет выиграшную комбинацию
+    {
         bool result = false;
         int[] mass = new int[9];
         for (int i = 0; i < 9; i++)
