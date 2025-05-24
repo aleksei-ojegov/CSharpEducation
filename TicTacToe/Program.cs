@@ -100,6 +100,8 @@ class TicTacToe
         int select_player = 0;
         bool corect_in = false;
         bool winner = false;
+        string X = "X";
+        string O = "O";
 
         for (int i = 0; i < box.GetLength(0); i++)
         {
@@ -156,14 +158,14 @@ class TicTacToe
                     select_player_1[i] = select_player;
                     nomber_pol_player[0, i] = 1;
                     nomber_pol_player[1, i] = select_player;
-                    box[nn[0, 0], nn[0, 1]] = "X";
+                    box[nn[0, 0], nn[0, 1]] = X;
                 }
                 else
                 {
                     select_player_2[i] = select_player;
                     nomber_pol_player[0, i] = 2;
                     nomber_pol_player[1, i] = select_player;
-                    box[nn[0, 0], nn[0, 1]] = "O";
+                    box[nn[0, 0], nn[0, 1]] = O;
                 }
                 
             }
@@ -178,11 +180,11 @@ class TicTacToe
             {
                 for (int j = 0; j < box.GetLength(1); j++)
                 {
-                    if(box[k, j] == "X")
+                    if(box[k, j] == X)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
-                    else if (box[k, j] == "O")
+                    else if (box[k, j] == O)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                     }
