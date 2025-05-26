@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Drawing;
 
 class TicTacToe
 {
     static int[,] get_box_index(int number)
     {
-        int [,] indexs = new int[1,2];
-        switch(number)
+        int[,] indexs = new int[1, 2];
+        switch (number)
         {
             case 1:
                 indexs[0, 0] = 0;
@@ -48,7 +48,7 @@ class TicTacToe
         return indexs;
     }
 
-    static bool get_winner_combination(int [] number)
+    static bool get_winner_combination(int[] number)
     {
         bool result = false;
         int[] mass = new int[9];
@@ -86,16 +86,16 @@ class TicTacToe
 
     static void Main()
     {
-        string[,] box = new string[5,5] {
-        { "1", "|", "2", "|", "3" } , 
-        { "-", "+", "-", "+", "-" } , 
-        { "4", "|", "5", "|", "6" } , 
-        { "-", "+", "-", "+", "-" } , 
+        string[,] box = new string[5, 5] {
+        { "1", "|", "2", "|", "3" } ,
+        { "-", "+", "-", "+", "-" } ,
+        { "4", "|", "5", "|", "6" } ,
+        { "-", "+", "-", "+", "-" } ,
         { "7", "|", "8", "|", "9" } };
         int[] select_player_1 = new int[9];
         int[] select_player_2 = new int[9];
         int[] nomber_pol = new int[9];
-        int[,] nomber_pol_player = new int[2,9];
+        int[,] nomber_pol_player = new int[2, 9];
         string player = "";
         int select_player = 0;
         bool corect_in = false;
@@ -115,33 +115,35 @@ class TicTacToe
         for (int i = 0; i < 9; i++)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Ход игрока ");
-            if (i%2 == 0)
+            Console.Write("Ход ");
+            if (i % 2 == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                player = "за крестиками";
+                player = "крестиков";
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                player = "за ноликами";
+                player = "ноликов";
             }
-            
+
             Console.WriteLine(player + '\n');
             Console.ForegroundColor = ConsoleColor.White;
             try
             {
                 select_player = Convert.ToInt32(Console.ReadLine());
                 int get_replay = Array.IndexOf(nomber_pol, select_player);
-                if (select_player < 0 || select_player > 9)
+                if (select_player < 1 || select_player > 9)
                 {
-                    Console.WriteLine("Выход за пределы, сходите правильно");
+                    Console.WriteLine("Выход за пределы\n" +
+                        "Введите число от 1 до 9");
                     i--;
                     continue;
                 }
                 else if (get_replay != -1)
                 {
-                    Console.WriteLine("Данный ход уже был, сходите правильно");
+                    Console.WriteLine("Данный ход уже был\n" +
+                        "Введите число от 1 до 9, которое ещё не использовалось");
                     i--;
                     continue;
                 }
@@ -167,9 +169,9 @@ class TicTacToe
                     nomber_pol_player[1, i] = select_player;
                     box[nn[0, 0], nn[0, 1]] = O;
                 }
-                
+
             }
-            catch 
+            catch
             {
                 Console.WriteLine("Неверный тип данных, сходите правильно");
                 i--;
@@ -180,7 +182,7 @@ class TicTacToe
             {
                 for (int j = 0; j < box.GetLength(1); j++)
                 {
-                    if(box[k, j] == X)
+                    if (box[k, j] == X)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
@@ -197,10 +199,10 @@ class TicTacToe
                 Console.WriteLine();
             }
 
-            if (i % 2 == 0 )
+            if (i % 2 == 0)
             {
                 select_player_1[i] = select_player;
-                if(get_winner_combination(select_player_1))
+                if (get_winner_combination(select_player_1))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Победитель играл крестами !");
@@ -221,7 +223,7 @@ class TicTacToe
             }
         }
 
-        if(!winner)
+        if (!winner)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Ничья");
