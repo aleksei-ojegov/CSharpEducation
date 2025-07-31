@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace EmployeeAccountingSystem
 {
+    /// <summary>
+    /// <Класс сотрудник с почасовой оплатой.
+    /// </summary>
     public class PartTimeEmployee : Employee
     {
-        public int WorkingHours { get; set; } 
+        /// <summary>
+        /// <Свойство определяющее количество отработанных часов.
+        /// </summary>
+        public int WorkingHours { get; set; }
+
+        /// <summary>
+        /// <Свойство определяющее оплату за отработанный час.
+        /// </summary>
         public int PricePerHour { get; set; } 
 
         public override decimal CalculateSalary()
