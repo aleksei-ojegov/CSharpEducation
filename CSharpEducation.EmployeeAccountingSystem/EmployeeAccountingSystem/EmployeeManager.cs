@@ -8,24 +8,6 @@ using System.Xml.Linq;
 namespace EmployeeAccountingSystem
 {
     /// <summary>
-    /// <Исключение срабатывает, когда работник с таким именем уже существует.
-    /// </summary>
-    public class EmployeeExceptionExists : Exception
-    {
-        public EmployeeExceptionExists(string name)
-            : base($"Сотрудник с именем {name} уже существует") { }
-    }
-
-    /// <summary>
-    /// <Исключение срабатывает, когда работник с таким именем не найден.
-    /// </summary>
-    public class EmployeeExceptionNotExists : Exception
-    {
-        public EmployeeExceptionNotExists(string name)
-            : base($"Сотрудник с именем {name} не найден") { }
-    }
-
-    /// <summary>
     /// <Класс для управления сотрудниками.
     /// </summary>
     public class EmployeeManager<T> : IEmployeeManager<T> where T : Employee
