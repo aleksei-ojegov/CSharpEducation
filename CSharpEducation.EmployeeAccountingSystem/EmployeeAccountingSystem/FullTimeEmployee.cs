@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeAccountingSystem
 {
+    /// <summary>
+    /// Класс для сотрудника с полной занятостью.
+    /// </summary>
     public class FullTimeEmployee : Employee
     {
         public override decimal CalculateSalary()
