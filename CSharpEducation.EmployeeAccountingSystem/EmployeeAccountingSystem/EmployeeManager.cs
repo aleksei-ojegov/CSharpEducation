@@ -35,10 +35,6 @@ namespace EmployeeAccountingSystem
         /// </summary>
         private readonly Dictionary<string, T> _employees = new();
 
-        /// <summary>
-        /// <Метод для добавления сотрудника.
-        /// </summary>
-        /// <param name="employee">Объект класса сотрудника.</param>
         public void Add(T employee)
         {
             if (_employees.ContainsKey(employee.Name))
@@ -49,11 +45,6 @@ namespace EmployeeAccountingSystem
             _employees[employee.Name] = employee;
         }
 
-        /// <summary>
-        /// <Метод для вывода сотрудника по его имени.
-        /// </summary>
-        /// <param name="name">Имя сотрудника.</param>
-        /// <returns>Возращает объект сордника, иначе исключение.</returns>
         public T Get(string name)
         {
             if (!_employees.ContainsKey(name))
@@ -64,10 +55,6 @@ namespace EmployeeAccountingSystem
             return _employees[name];
         }
 
-        /// <summary>
-        /// <Метод для обновления сотрудника.
-        /// </summary>
-        /// <param name="employee">Объект класса сотрудника.</param>
         public void Update(T employee)
         {
             if (!_employees.ContainsKey(employee.Name))
@@ -78,10 +65,6 @@ namespace EmployeeAccountingSystem
             _employees[employee.Name] = employee;
         }
 
-        /// <summary>
-        /// <Метод для удаления сотрудника.
-        /// </summary>
-        /// <param name="name">Имя сотрудника.</param>
         public void Remove(string name)
         {
             if (!_employees.ContainsKey(name))
